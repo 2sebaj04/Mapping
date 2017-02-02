@@ -28,6 +28,6 @@ public class HelloMap extends Activity
 
         mv.setBuiltInZoomControls(true);
         mv.getController().setZoom(12);
-        mv.getController().setCenter(new GeoPoint(40.1,-22.5));
+        mv.getController().setCenter(new GeoPoint(40.1,22.5));
     }
 }
