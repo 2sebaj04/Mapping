@@ -72,6 +72,12 @@ public class HelloMap extends Activity implements View.OnClickListener
             startActivityForResult(intent,1);
             return true;
         }
+        else(item.getItemId() == R.id.setlocation)
+        {
+            Intent intent = new Intent(this,SetLocationActivity.class);
+            startActivityForResult(intent,2);
+            return true;
+        }
         return false;
     }
 
@@ -89,11 +95,16 @@ public class HelloMap extends Activity implements View.OnClickListener
                 {
                     mv.setTileSource(TileSourceFactory.CYCLEMAP);
                 }
-                else
-                {
+
+                else{
                     mv.setTileSource(TileSourceFactory.MAPNIK);
                 }
             }
+        }
+
+
+        else if(requestCode==2){
+            mv.setTileSource(TileSourceFactory.);
         }
     }
 

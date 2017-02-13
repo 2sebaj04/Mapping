@@ -36,4 +36,6 @@ public class MapChooseActivity extends Activity implements View.OnClickListener{
     }
 
 
+
+
 }
