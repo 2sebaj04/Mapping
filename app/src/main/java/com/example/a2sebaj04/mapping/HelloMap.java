@@ -55,6 +55,7 @@ public class HelloMap extends Activity implements View.OnClickListener
         mv.getController().setCenter(new GeoPoint(latitude,longitude));
     }
 
+
     public boolean onCreateOptionsMenu(Menu menu)
     {
         MenuInflater inflater=getMenuInflater();
@@ -72,7 +73,8 @@ public class HelloMap extends Activity implements View.OnClickListener
             startActivityForResult(intent,1);
             return true;
         }
-        else(item.getItemId() == R.id.setlocation)
+
+        else if(item.getItemId() == R.id.setlocation)
         {
             Intent intent = new Intent(this,SetLocationActivity.class);
             startActivityForResult(intent,2);
@@ -103,8 +105,15 @@ public class HelloMap extends Activity implements View.OnClickListener
         }
 
 
-        else if(requestCode==2){
-            mv.setTileSource(TileSourceFactory.);
+        else if(requestCode==2)
+
+
+            {
+                Bundle extras=intent.getExtras();
+
+                double latitude = extras.getDouble("com.example.latitude");
+                double longitude = extras.getDouble("com.example.longitude");
+                mv.getController().setCenter(new GeoPoint(latitude,longitude));
         }
     }
 

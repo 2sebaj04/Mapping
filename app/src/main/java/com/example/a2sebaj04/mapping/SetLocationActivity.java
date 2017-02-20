@@ -34,7 +34,8 @@ public class SetLocationActivity extends Activity implements View.OnClickListene
         EditText longitudeEditText = (EditText) findViewById(R.id.longitude);
         double longitude = Double.parseDouble(longitudeEditText.getText().toString());
 
-        bundle.putDouble("com.example.setlocation",setLocation);
+        bundle.putDouble("com.example.latitude",latitude);
+        bundle.putDouble("com.example.longitude",longitude);
         intent.putExtras(bundle);
         setResult(RESULT_OK,intent);
         finish();
