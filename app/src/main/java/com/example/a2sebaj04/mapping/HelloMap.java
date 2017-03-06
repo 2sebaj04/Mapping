@@ -2,6 +2,7 @@ package com.example.a2sebaj04.mapping;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
@@ -115,6 +116,21 @@ public class HelloMap extends Activity implements View.OnClickListener
                 double longitude = extras.getDouble("com.example.longitude");
                 mv.getController().setCenter(new GeoPoint(latitude,longitude));
         }
+    }
+
+    public void onStart()
+    {
+        super.onStart();
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        double lat = Double.parseDouble ( prefs.getString("lat", "50.9") );
+        double lon = Double.parseDouble ( prefs.getString("lon", "-1.4") );
+        int dzl = Integer.parseInt ( prefs.getString("dzl","12"));
+
+        
+
+
+
+        // do something with the preference data...
     }
 
 }
